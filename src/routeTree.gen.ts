@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CategoriesRouteImport } from './routes/categories'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as FavoritesRouteImport } from './routes/favorites'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as MyBooksRouteImport } from './routes/my-books'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as BookBookIdRouteImport } from './routes/book.$bookId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CategoriesRoute = CategoriesRouteImport.update({
+  id: '/categories',
+  path: '/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritesRoute = FavoritesRouteImport.update({
+  id: '/favorites',
+  path: '/favorites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyBooksRoute = MyBooksRouteImport.update({
+  id: '/my-books',
+  path: '/my-books',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookBookIdRoute = BookBookIdRouteImport.update({
+  id: '/book/$bookId',
+  path: '/book/$bookId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/dashboard': typeof DashboardRoute
+  '/favorites': typeof FavoritesRoute
+  '/login': typeof LoginRoute
+  '/my-books': typeof MyBooksRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/search': typeof SearchRoute
+  '/book/$bookId': typeof BookBookIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/dashboard': typeof DashboardRoute
+  '/favorites': typeof FavoritesRoute
+  '/login': typeof LoginRoute
+  '/my-books': typeof MyBooksRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/search': typeof SearchRoute
+  '/book/$bookId': typeof BookBookIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/dashboard': typeof DashboardRoute
+  '/favorites': typeof FavoritesRoute
+  '/login': typeof LoginRoute
+  '/my-books': typeof MyBooksRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/search': typeof SearchRoute
+  '/book/$bookId': typeof BookBookIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/categories'
+    | '/dashboard'
+    | '/favorites'
+    | '/login'
+    | '/my-books'
+    | '/profile'
+    | '/register'
+    | '/search'
+    | '/book/$bookId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/categories'
+    | '/dashboard'
+    | '/favorites'
+    | '/login'
+    | '/my-books'
+    | '/profile'
+    | '/register'
+    | '/search'
+    | '/book/$bookId'
+  id:
+    | '__root__'
+    | '/'
+    | '/categories'
+    | '/dashboard'
+    | '/favorites'
+    | '/login'
+    | '/my-books'
+    | '/profile'
+    | '/register'
+    | '/search'
+    | '/book/$bookId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CategoriesRoute: typeof CategoriesRoute
+  DashboardRoute: typeof DashboardRoute
+  FavoritesRoute: typeof FavoritesRoute
+  LoginRoute: typeof LoginRoute
+  MyBooksRoute: typeof MyBooksRoute
+  ProfileRoute: typeof ProfileRoute
+  RegisterRoute: typeof RegisterRoute
+  SearchRoute: typeof SearchRoute
+  BookBookIdRoute: typeof BookBookIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/categories': {
+      id: '/categories'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favorites': {
+      id: '/favorites'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-books': {
+      id: '/my-books'
+      path: '/my-books'
+      fullPath: '/my-books'
+      preLoaderRoute: typeof MyBooksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book/$bookId': {
+      id: '/book/$bookId'
+      path: '/book/$bookId'
+      fullPath: '/book/$bookId'
+      preLoaderRoute: typeof BookBookIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CategoriesRoute: CategoriesRoute,
+  DashboardRoute: DashboardRoute,
+  FavoritesRoute: FavoritesRoute,
+  LoginRoute: LoginRoute,
+  MyBooksRoute: MyBooksRoute,
+  ProfileRoute: ProfileRoute,
+  RegisterRoute: RegisterRoute,
+  SearchRoute: SearchRoute,
+  BookBookIdRoute: BookBookIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
